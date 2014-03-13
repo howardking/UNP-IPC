@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 	nloop = atoi(argv[2]);
 	fd = open(argv[1], O_RDWR | O_CREAT, 0666);
 	write(fd, &shared, sizeof(shared));
-	ptr = mmap(NULL, sizeof(struct shared), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+//	ptr = mmap(NULL, sizeof(struct shared), PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+	ptr = mmap(NULL, sizeof(struct shared), PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
 	close(fd);
 
 	sem_init(&ptr->mutex, 1, 1);
