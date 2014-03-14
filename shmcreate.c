@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 	ftruncate(fd, length);
 	
 	ptr = mmap(NULL, length, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+	printf("shmcreate at address : %p\n", ptr);
 
 	exit(0);
 }

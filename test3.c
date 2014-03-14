@@ -31,7 +31,8 @@ int main(int argc, char *argv[])
 		sleep(5);
 		printf("shared memory integer = %d\n", *ptr1);
 	}
-
+	
+	sleep(2);
 	ptr1 = mmap(NULL, sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED, fd1, 0);
 
 	ptr2 = mmap(NULL, stat.st_size, PROT_READ, MAP_SHARED, fd2, 0);
