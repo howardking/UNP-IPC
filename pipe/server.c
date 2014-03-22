@@ -39,8 +39,8 @@ void server(int readfd, int writefd)
 		exit(1);
 	}
 
-	buff[n] = '\n';
-
+	buff[n] = '\0';
+	/*printf("buff =%s", buff);*/
 	if ((fd = open(buff, O_RDONLY)) < 0){
 		snprintf(buff + n, sizeof(buff)-n, ": can't open, %s\n", strerror(errno));
 		n = strlen(buff);
