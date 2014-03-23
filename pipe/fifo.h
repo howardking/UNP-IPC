@@ -13,5 +13,7 @@
 #define FILE_MODE 0666
 #define FIFO1 "fifo.1"
 #define FIFO2 "fifo.2"
+#define SERV_FIFO 	"fifo.serv"
+#define MAXLINE 4096
 
 #endif /* _FIFO_H_ */
